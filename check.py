@@ -3,7 +3,7 @@ import re
 import os
 import sys
 
-pattern = re.compile('([A-PR-UWYZ]([A-HK-Y][0-9]([0-9]|[ABEHMNPRV-Y])?|[0-9]([0-9]|[A-HJKPSTUW])?)[0-9][ABD-HJLNP-UW-Z]{2})')
+pattern = re.compile('([A-PR-UWYZ]([A-HK-Y][0-9]([0-9]|[ABEHMNPRV-Y])?|[0-9]([0-9]|[A-HJKPSTUW])?) ?[0-9][ABD-HJLNP-UW-Z]{2})')
 
 os.chdir('data')
 postcode_files = os.listdir('.')
