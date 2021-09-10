@@ -15,20 +15,20 @@ for postcode_file in postcode_files:
 # file_length = file_len('postcodes.txt')
 # f = open('postcodes.txt')
 
-print 'Checking postcodes...'
+print('Checking postcodes...')
 
 progress = 0
 
 for postcode_file in postcode_files:
     if postcode_file.endswith(".csv"):
-        with open(postcode_file, "rb") as csv_file:
+        with open(postcode_file, "r") as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',', quotechar='"')
             for csv_row in csv_reader:
                 postcode = csv_row[0].replace(" ", "")
 
                 if not re.match(pattern, postcode):
-                    print ''
-                    print 'Error: Postcode %s does not match!' % postcode
+                    print('')
+                    print('Error: Postcode %s does not match!' % postcode)
                     sys.exit(0)
 
     progress += 1
@@ -39,5 +39,5 @@ for postcode_file in postcode_files:
     sys.stdout.write("\rProgress: [%s] %.2f%%" % ('#' * blocks + '-' * (20 - blocks), percentage))
     sys.stdout.flush()
 
-print ''
-print 'Complete!'
+print('')
+print('Complete!')
